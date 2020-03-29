@@ -21,7 +21,7 @@
   <body>
     
     <header role="banner">
-     
+    
       <nav class="navbar navbar-expand-md navbar-dark bg-light">
         <div class="container">
           <a class="navbar-brand absolute">Beasiswa PHB Tegal</a>

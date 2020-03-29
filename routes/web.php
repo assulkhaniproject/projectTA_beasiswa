@@ -22,13 +22,17 @@ Route::post('/postlogin','AuthController@postlogin');
 Route::get('/logout','AuthController@logout');
 
 // Route userprofile
-Route::group(['middleware' => 'auth'], function(){
-    Route::get('/dashboard','DashboardController@dashboard');
+Route::group(['middleware' => ['auth','checkRole:admin']], function(){
     Route::get('/userprofile','UserProfileController@userprofile');
     Route::post('/userprofile/create','UserProfileController@create');
     Route::get('/userprofile/{id}/edit','UserProfileController@edit');
     Route::post('/userprofile/{id}/update','UserProfileController@update');
     Route::get('/userprofile/{id}/delete','UserProfileController@delete');
+});
+
+Route::group(['middleware' => ['auth','checkRole:admin,userprofile']], function(){
+    Route::get('/dashboard','DashboardController@dashboard');
+    
 });
 
 // Route data mahasiswa

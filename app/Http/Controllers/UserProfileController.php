@@ -13,7 +13,19 @@ class UserProfileController extends Controller
     }
     public function create(Request $request)
     {
-        \App\UserProfile::create($request->all());
+        
+        //insert table  user
+        $user = new \App\User;
+        $user->role ='userprofile';
+        $user->name = $request->nama;
+        $user->email = $request->email;
+        $user->password = bcrypt ('qwerty');
+        $user->save();
+        
+        //insert table userprofile
+        
+        $request->request->add(['user_id' => $user->id ]);
+        $userprofile = \App\UserProfile::create($request->all());
         return redirect('/userprofile')->with('success','Data Berhasil Di Simpan !');
     }
     public function edit($id)

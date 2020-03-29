@@ -32,12 +32,8 @@
                 <div class="table-responsive">
                   <table class="table">
                     <thead class=" text-primary">
-                      <th>
-                        Nama
-                      </th>
-                      <th>
-                        Program Study
-                      </th>
+                      <th>Nama</th>
+                      <th>Program Study</th>
                     </thead>
                     <tbody>
                         <!-- menampilkan data -->
@@ -74,6 +70,11 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nama Admin</label>
                                 <input name="nama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                             </div>
 
                             <div class="form-group">

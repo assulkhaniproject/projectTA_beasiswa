@@ -47,17 +47,19 @@
             </a>
           </li>
           <li>
-            <a href="/userprofile">
-              <i class="nc-icon nc-single-02"></i>
-              <p>User Profile</p>
-            </a>
-          </li>
-          <li>
             <a href="/datamahasiswa">
               <i class="nc-icon nc-paper"></i>
               <p>Data Mahasiswa</p>
             </a>
           </li>
+          @if(auth()->user()->role == 'admin')
+          <li>
+              <a href="/userprofile">
+              <i class="nc-icon nc-single-02"></i>
+              <p>User Profile</p>
+            </a>
+          </li>
+          @endif
         </ul>
       </div>
     </div>

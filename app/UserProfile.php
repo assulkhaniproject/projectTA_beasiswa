@@ -8,5 +8,5 @@ class UserProfile extends Model
 {
     //mendeklarasikan nama table 
     protected $table = 'userprofile';
-    protected $fillable = ['nama','program_study'];
+    protected $fillable = ['user_id','nama','program_study'];
 }
