@@ -10,4 +10,5 @@ class MahasiswaController extends Controller
     {
         return view('mahasiswa.datamahasiswa');
     }
+    
 }

@@ -21,7 +21,7 @@ Route::get('/login1','AuthController@login')->name('login');
 Route::post('/postlogin','AuthController@postlogin');
 Route::get('/logout','AuthController@logout');
 
-// Route userprofile
+// Route userprofile (admin)
 Route::group(['middleware' => ['auth','checkRole:admin']], function(){
     Route::get('/userprofile','UserProfileController@userprofile');
     Route::post('/userprofile/create','UserProfileController@create');
@@ -33,8 +33,8 @@ Route::group(['middleware' => ['auth','checkRole:admin']], function(){
 Route::group(['middleware' => ['auth','checkRole:admin,userprofile']], function(){
     Route::get('/dashboard','DashboardController@dashboard');
     
+    // Route data mahasiswa
+    Route::get('/datamahasiswa','MahasiswaController@datamahasiswa');
+    
 });
 
-// Route data mahasiswa
-Route::get('/datamahasiswa','MahasiswaController@datamahasiswa');
-        
